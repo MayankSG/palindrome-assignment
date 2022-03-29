@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        function largestPalindrome() {
+
+            var res = 0;
+            for (var i = 999; i > 100; i--) {
+                for (var j = 999; j > 100; j--) {
+                    var mul = j * i;
+                    if (isPalin(mul) && mul > res) {
+                        res = mul;
+                    }
+                }
+            }
+
+            return res;
+        }
+
+        function isPalin(i) {
+            return i.toString() == i.toString().split("").reverse().join("");
+        }
+    </script>
+
+    <h2>Largest Palindrome No from product of 3 digit no.</h2>
+
+    <button type="button" onclick="document.getElementById('demo').innerHTML = largestPalindrome()">
+        Click to display Largest Palindrome No.</button>
+
+    <p id="demo"></p>
+
+</body>
+
+</html>
+
